@@ -41,4 +41,30 @@ class Round
     (number_correct_by_category(name)/temp.size.to_f * 100.0).round
   end
 
+  def start
+    puts "Welcome! You're playing with #{self.deck.cards.size} cards. \n"
+    puts "-------------------------------------------------\n"
+    until self.number_turn == self.deck.cards.size
+      puts "This is card #{self.number_turn + 1} out of #{self.deck.cards.size}"
+      puts self.current_card.question + "\n"
+      input = gets.chomp
+      self.take_turn(input)
+      puts self.turns.last.feedback
+    end
+    puts "****** Game over! ******"
+    if self.number_correct == 1
+      puts "You had #{self.number_correct} guess out of #{self.number_turn} for a total score of #{self.percent_correct}%."
+    else
+      puts "You had #{self.number_correct} guesses out of #{self.number_turn} for a total score of #{self.percent_correct}%."
+    end
+    self.scores.keys.each do |key|
+      if key.is_a? Symbol
+        puts "#{key.to_s} - #{self.percent_correct_by_category(key)}% correct."
+      else
+        puts "#{key} - #{self.percent_correct_by_category(key)}% correct."
+      end
+    end
+    puts "\n"
+  end
+
 end
