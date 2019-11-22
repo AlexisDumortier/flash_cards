@@ -15,4 +15,17 @@ class Round
     self.deck.cards[self.number_turn]
   end
 
+  def take_turn(guess)
+    turn = Turn.new(guess, self.current_card)
+    if turn.correct?
+       self.number_correct += 1
+       self.scores[self.current_card.category] += 1
+     else
+       self.scores[self.current_card.category] += 0
+    end
+    self.turns << turn
+    self.number_turn += 1
+    turn
+  end
+
 end
