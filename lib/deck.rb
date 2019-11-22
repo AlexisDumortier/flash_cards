@@ -10,4 +10,14 @@ class Deck
     self.cards.size
   end
 
+  def cards_in_category(type)
+    temp = []
+    cards.each do |card|
+      if card.category == type
+        temp << card
+      end
+    end
+    temp
+  end
+
 end
