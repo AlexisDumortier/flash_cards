@@ -28,4 +28,8 @@ class Round
     turn
   end
 
+  def number_correct_by_category(name)
+    self.scores[name]
+  end
+
 end
