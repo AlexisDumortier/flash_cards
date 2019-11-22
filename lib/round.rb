@@ -11,4 +11,8 @@ class Round
     @scores = Hash.new(0)
   end
 
+  def current_card
+    self.deck.cards[self.number_turn]
+  end
+
 end
