@@ -23,4 +23,12 @@ class TurnTest < Minitest::Test
     assert_equal card, turn.card
   end
 
+  def test_can_check_correctness
+    card = card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
+    turn1 = Turn.new("Washington", card)
+    refute turn1.correct?
+    turn2 = Turn.new("Juneau", card)
+    assert turn2.correct?
+  end
+
 end
