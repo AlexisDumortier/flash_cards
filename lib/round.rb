@@ -36,4 +36,9 @@ class Round
     (self.number_correct/self.number_turn.to_f * 100).round
   end
 
+  def percent_correct_by_category(name)
+    temp = self.deck.cards_in_category(name)
+    (number_correct_by_category(name)/temp.size.to_f * 100.0).round
+  end
+
 end
