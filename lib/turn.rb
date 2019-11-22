@@ -11,4 +11,12 @@ class Turn
     self.guess.downcase == card.answer.downcase
   end
 
+  def feedback
+    if self.correct?
+     "Correct!"
+    else
+     "Incorrect."
+    end
+  end
+
 end
