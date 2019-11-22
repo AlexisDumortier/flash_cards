@@ -32,4 +32,8 @@ class Round
     self.scores[name]
   end
 
+  def percent_correct
+    (self.number_correct/self.number_turn.to_f * 100).round
+  end
+
 end
