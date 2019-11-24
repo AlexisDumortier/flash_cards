@@ -11,13 +11,12 @@ class Deck
   end
 
   def cards_in_category(type)
-    temp = []
-    cards.each do |card|
-      if card.category == type
-        temp << card
-      end
+
+    array_cards_in_category = self.cards.select do |card|
+      card.category == type
     end
-    temp
+    array_cards_in_category
+
   end
 
 end
