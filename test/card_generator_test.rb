@@ -15,7 +15,7 @@ class CardGeneratorTest < Minitest::Test
     assert_respond_to CardGenerator.new("cards.txt"), :cards
     # tests that it returns an array
     assert_kind_of Array, CardGenerator.new("cards.txt").cards
-    # tests that the elements of the array are cards
+    # tests that the elements of the array are indeed cards
     assert_kind_of Card, CardGenerator.new("cards.txt").cards.at(0)
     assert_kind_of Card, CardGenerator.new("cards.txt").cards.at(1)
     assert_kind_of Card, CardGenerator.new("cards.txt").cards.at(2)
