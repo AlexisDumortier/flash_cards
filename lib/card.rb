@@ -1,11 +1,11 @@
-class Card
+# frozen_string_literal: true
 
+class Card
   attr_reader :question, :answer, :category
 
   def initialize(question, answer, category)
     @question = question
     @answer = answer
-    @category = category
+    @category = category.to_sym
   end
-
 end
